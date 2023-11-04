@@ -47,16 +47,16 @@ fun main() {
 
 fun Application.module() {
     routing {
-        get ("/module") {
-            call.respondText ("Hello Module!")
+        get ("/test_one") {
+            call.respondText ("Hello Test Module One!")
         }
     }
 }
 
 fun Application.module_alt() {
     routing {
-        get ("/module_alt") {
-            call.respondText ("Hello Module Alt!")
+        get ("/test_two") {
+            call.respondText ("Hello Test Module Two!")
         }
     }
 }
