@@ -12,39 +12,21 @@ import io.ktor.server.routing.*
 import kotlinx.serialization.Serializable
 
 // Server Engines Supported by Ktor: Netty, Jetty, Tomcat, CIO
-// running on localhost:8080/
-
-// Engine Main Approach  ================================================================
-
-//fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
-//
-// This will run on localhost:8080/
-//fun Application.module() {
-//    routing {
-//        get ("/module") {
-//            call.respondText ("Hello World!")
-//        }
-//    }
-//}
-//
-//fun Application.module_alt() {
-//    routing {
-//        get ("/module_alt") {
-//            call.respondText ("Hello Module Alt!")
-//        }
-//    }
-//}
 
 // Embedded Server Approach ================================================================
 
 fun main() {
     embeddedServer(Netty, port = 8080) {
-        install(ContentNegotiation) {
-            json()
-        }
-        module()
-        //module_alt()
+        extracted()
     }.start(wait = true)
+}
+
+private fun Application.extracted() {
+    install(ContentNegotiation) {
+        json()
+    }
+    module()
+    //module_alt()
 }
 
 /*
@@ -117,3 +99,24 @@ fun Application.module_alt() {
         }
     }
 }
+
+// Engine Main Approach  ================================================================
+
+//fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
+//
+// This will run on localhost:8080/
+//fun Application.module() {
+//    routing {
+//        get ("/module") {
+//            call.respondText ("Hello World!")
+//        }
+//    }
+//}
+//
+//fun Application.module_alt() {
+//    routing {
+//        get ("/module_alt") {
+//            call.respondText ("Hello Module Alt!")
+//        }
+//    }
+//}
