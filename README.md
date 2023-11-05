@@ -6,7 +6,7 @@ based on this [Udemy Course](https://www.udemy.com/course/build-modern-android-a
 - Embedded Server vs. Engine Main
 - Multiple Modules
 - Running locally on port 8080 
-- Passing Normal Params 
+- Passing URL Params 
 - Passing Query Parameters
 - Returning Custom Object
 - Try / Catch with various error codes
@@ -21,7 +21,7 @@ Followed [Ktor Docs](https://ktor.io/docs/serialization.html) for Content Negoti
 - Install Content Negotiation
 - Configure a Serializaer -> Json 
 
-Referenced [This Code Example](https://github.com/ktorio/ktor-documentation/blob/2.3.5/codeSnippets/snippets/json-kotlinx/build.gradle.kts) as a model for the build.gradle
+Referenced thsi [Config Example](https://github.com/ktorio/ktor-documentation/blob/2.3.5/codeSnippets/snippets/json-kotlinx/build.gradle.kts) as a model for the build.gradle
 
 
 
