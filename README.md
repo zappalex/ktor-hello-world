@@ -1,6 +1,6 @@
 # ktor-hello-world
 
-based on this [Udemy Course](https://www.udemy.com/course/build-modern-android-app-with-rest-api-and-ktor-server/) Section 2.5
+based on this [Udemy Course](https://www.udemy.com/course/build-modern-android-app-with-rest-api-and-ktor-server/) Section 2
 
 
 ## Topics Covered
