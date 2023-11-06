@@ -1,17 +1,18 @@
 package com.example
 
 import io.ktor.http.*
-import io.ktor.http.ContentDisposition.Companion.File
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
+import io.ktor.server.html.*
 import io.ktor.server.http.content.*
 import io.ktor.server.netty.*
 import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
+import io.ktor.server.routing.head
+import kotlinx.html.*
 import kotlinx.serialization.Serializable
-import java.io.File
 
 // Server Engines Supported by Ktor: Netty, Jetty, Tomcat, CIO
 
@@ -87,6 +88,26 @@ fun Application.module() {
 
         // Mapping to any file in resources/assets with provided url param matching filename.
         staticResources("/static", "assets")
+
+        // HTML DSL with Kotlin
+        get("/welcome") {
+            val name = call.request.queryParameters["name"]
+            call.respondHtml {
+                head {
+                    title { +"Random Webshite"}
+                }
+                body {
+                    if(name.isNullOrEmpty()) {
+                        h3 { +"Welcome!"}
+                    } else {
+                        h3 { + "Welcome, $name!" }
+                    }
+                    p { +"Current directory is: ${System.getProperty("user.dir")}"}
+                    // referencing image with specified path for resources declared above
+                    img(src = "/static/tacoma.jpg")
+                }
+            }
+        }
 
     }
 }
