@@ -1,15 +1,17 @@
 package com.example
 
-import com.example.plugins.*
 import io.ktor.http.*
+import io.ktor.http.ContentDisposition.Companion.File
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
+import io.ktor.server.http.content.*
 import io.ktor.server.netty.*
 import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import kotlinx.serialization.Serializable
+import java.io.File
 
 // Server Engines Supported by Ktor: Netty, Jetty, Tomcat, CIO
 
@@ -82,6 +84,9 @@ fun Application.module() {
         get("/moved") {
             call.respondText("You have successfully been redirected!")
         }
+
+        // Mapping to any file in resources/assets with provided url param matching filename.
+        staticResources("/static", "assets")
 
     }
 }
