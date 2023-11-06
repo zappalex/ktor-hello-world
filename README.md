@@ -17,7 +17,8 @@ based on this [Udemy Course](https://www.udemy.com/course/build-modern-android-a
 
 
 ## Project Setup
-Configured using IntelliJ's Ktor Configurator vs. following the course.
+- Configured using IntelliJ's Ktor Configurator vs. following the course.
+- [Ktor Project Generator](https://start.ktor.io/#/settings?name=ktor-sample&website=example.com&artifact=com.example.ktor-sample&kotlinVersion=1.9.20&ktorVersion=2.3.5&buildSystem=GRADLE_KTS&engine=NETTY&configurationIn=CODE&addSampleCode=true&plugins=) Is also very useful to configure and create the project with all necessary plugins / resources. 
 
 
 ## Configs
