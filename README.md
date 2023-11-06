@@ -13,6 +13,7 @@ based on this [Udemy Course](https://www.udemy.com/course/build-modern-android-a
 - Try / Catch with various error codes
 - Redirecting to another URL
 - Serving static content -> text, html, jpg
+- HTML DSL 
 
 
 ## Project Setup
@@ -32,5 +33,4 @@ Followed [Ktor Docs](https://ktor.io/docs/serialization.html) for Content Negoti
 
 ## Static Content 
 Course is using deprecated calls for serving static content. I implemented what was recommended in the [Ktor Docs](https://ktor.io/docs/serving-static-content.html#folders)
-
 
